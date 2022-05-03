@@ -18,5 +18,5 @@ public interface UserMapper {
     User findByUsername(User user);
 
     // 更改用户信息
-    Boolean updateUser(User user);
+    void updateUser(User user);
 }
