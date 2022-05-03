@@ -1,0 +1,6 @@
+mybatis:
+  mapper-locations: classpath:mappers/*                     # mapper路径
+  type-aliases-package: com.chrt.pojo                       # 取别名
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   # 日志打印
+    map-underscore-to-camel-case: true                      # 开启驼峰匹配
