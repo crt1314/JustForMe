@@ -63,8 +63,13 @@ public class UserController {
     // 前往主页
     @RequestMapping("/main")
     public String toMain(ModelMap modelMap, Model model) {
-        model.addAttribute("username", modelMap.get("username"));
-        model.addAttribute("password", modelMap.get("password"));
-        return "main";
+        String username = (String) modelMap.get("username");
+        String password = (String) modelMap.get("password");
+        if (username != null && !"".equals(username) && password != null && !"".equals(password)) {
+            model.addAttribute("username", username);
+            model.addAttribute("password", password);
+            return "main";
+        }
+        return "redirect:/index";
     }
 }
