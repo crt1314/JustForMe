@@ -1,0 +1,40 @@
+* {
+    font-family: "Lucida Calligraphy", cursive, serif, sans-serif;
+    padding: 0;
+    margin: 0;
+    color: aqua;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+header div {
+    flex: 1;
+}
+
+header h1 {
+    font-size: 100px;
+}
+
+nav[role="navigation"] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+nav[role="navigation"] div {
+    float: left;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+}

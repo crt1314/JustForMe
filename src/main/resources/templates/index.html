@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Just For Me</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="shortcut icon" href="img/Logo.png">
 </head>
 <body>
-<a th:href="@{/toLogin}">登录</a><a th:href="@{/toRegister}">注册</a>
+    <header role="banner">
+        <div>
+            <img src="img/Logo.gif" alt="Just For Me" width="200" height="200">
+            <h1>Welcome To Just For Me</h1>
+        </div>
+    </header>
+    <nav role="navigation">
+        <a th:href="@{/toLogin}"><div id="login">Login</div></a>
+        <a th:href="@{/toRegister}"><div id="register">Register</div></a>
+    </nav>
+
 </body>
 </html>
