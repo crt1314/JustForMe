@@ -5,6 +5,10 @@
     <title>Just For Me</title>
 </head>
 <body>
-
+    <form th:action="@{/register}" method="post">
+        <input type="text" name="username" placeholder="请输入您想要的用户名" required><br/>
+        <input type="password" name="password" placeholder="请输入您想要的密码(>8)" required><br/>
+        <input type="submit" value="提交">
+    </form>
 </body>
 </html>

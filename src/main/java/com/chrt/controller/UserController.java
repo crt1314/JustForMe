@@ -29,7 +29,7 @@ public class UserController {
     }
 
     // 注册验证
-    @RequestMapping("/register")
+    @PostMapping("/register")
     public String register(User user, Model model) {
         if (userService.findByUsername(user) != null) {
             model.addAttribute("errMsg", "用户名已存在");
@@ -39,7 +39,6 @@ public class UserController {
             return "forward:/toRegister";
         }
         userService.addUser(user);
-        model.addAttribute("errMsg", "");
         return "redirect:/index";
     }
 

@@ -6,8 +6,8 @@
 </head>
 <body>
     <form th:action="@{/login}" method="post">
-        <input type="text" name="username" placeholder="请输入用户名"><br/>
-        <input type="password" name="password" placeholder="请输入密码"><br/>
+        <input type="text" name="username" placeholder="请输入用户名" required><br/>
+        <input type="password" name="password" placeholder="请输入密码" required><br/>
         <input type="submit" value="提交">
     </form>
 </body>
