@@ -13,8 +13,8 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @Configuration
 public class RedisConfig {
     @Bean
-    public RedisTemplate<Object, Object> getRedisTemplate(RedisConnectionFactory factory) {
-        RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();
+    public RedisTemplate<String, Object> getRedisTemplate(RedisConnectionFactory factory) {
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
         // 设置redis连接工厂
         redisTemplate.setConnectionFactory(factory);
         // 创建key的序列化方式
@@ -25,7 +25,7 @@ public class RedisConfig {
         // 设置数据类型
         objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
         // 创建value的序列化方式
-        Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<Object>(Object.class);
+        Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
         jackson2JsonRedisSerializer.setObjectMapper(objectMapper);
 
         redisTemplate.setKeySerializer(stringRedisSerializer);
