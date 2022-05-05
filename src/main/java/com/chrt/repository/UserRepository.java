@@ -8,10 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    Integer findIdByUsername(String username);
-
-    User findByUsername(String username);
-
     @Transactional
     @Modifying
     @Query("update tb_user set password=?2 where id=?1")

@@ -74,8 +74,8 @@ public class UserController {
     }
 
     // 更改用户名
-    @PostMapping("/updateUsername")
-    public String updateUsername(String oldName, String newName, Model model) {
+    @PostMapping("/updateUn")
+    public String updateUn(String oldName, String newName, Model model) {
         if (oldName.equals(newName)) {
             model.addAttribute("errMsg", "新名字与原名字相同");
             return "";
@@ -84,6 +84,20 @@ public class UserController {
             return "";
         }
         userService.updateUsername(oldName, newName);
+        return "";
+    }
+
+    // 更改密码
+    @PostMapping("/updatePwd")
+    public String updatePwd(User user, String newPwd, Model model) {
+        if (user.getPassword().equals(newPwd)) {
+            model.addAttribute("errMsg", "新密码与原密码相同");
+            return "";
+        } else if (newPwd.length() < 8) {
+            model.addAttribute("errMsg", "新密码长度不足8位");
+            return "";
+        }
+        userService.updatePassword(user.getUsername(), newPwd);
         return "";
     }
 }

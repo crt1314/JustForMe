@@ -49,17 +49,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updatePassword(User user) {
-        userRepository.updatePassword(findIdByUsername(user), user.getPassword());
+    public void updatePassword(String username, String newPassword) {
+        User user = findByUsername(username);
+        userRepository.updatePassword(user.getId(), newPassword);
     }
 
     @Override
     public void updateUsername(String oldName, String newName) {
-        userRepository.updateUsername(userRepository.findIdByUsername(oldName), newName);
+        userRepository.updateUsername(userMapper.findIdByUsername(oldName), newName);
     }
 
     @Override
     public User findByUsername(String username) {
-        return userRepository.findByUsername(username);
+        return userMapper.findByUsername(username);
     }
 }
