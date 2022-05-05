@@ -17,9 +17,11 @@ public interface UserMapper {
     @Select("select * from tb_user where binary username=#{username}")
     User findByUsername(User user);
 
+    // 根据用户名查找用户ID
     @Select("select id from tb_user where binary username=#{username}")
     Integer findIdByUsername(String username);
 
+    // 根据用户名查找用户
     @Select("select * from tb_user where binary username=#{username}")
     User findByUsername(String username);
 }

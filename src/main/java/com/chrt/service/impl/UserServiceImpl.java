@@ -50,8 +50,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updatePassword(String username, String newPassword) {
-        User user = findByUsername(username);
-        userRepository.updatePassword(user.getId(), newPassword);
+        userRepository.updatePassword(userMapper.findIdByUsername(username), newPassword);
     }
 
     @Override
