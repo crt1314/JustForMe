@@ -57,4 +57,9 @@ public class UserServiceImpl implements UserService {
     public void updateUsername(String oldName, String newName) {
         userRepository.updateUsername(userRepository.findIdByUsername(oldName), newName);
     }
+
+    @Override
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
 }

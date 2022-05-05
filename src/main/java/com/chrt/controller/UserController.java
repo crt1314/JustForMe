@@ -72,4 +72,18 @@ public class UserController {
         }
         return "redirect:/index";
     }
+
+    // 更改用户名
+    @PostMapping("/updateUsername")
+    public String updateUsername(String oldName, String newName, Model model) {
+        if (oldName.equals(newName)) {
+            model.addAttribute("errMsg", "新名字与原名字相同");
+            return "";
+        } else if (userService.findByUsername(newName) != null) {
+            model.addAttribute("errMsg", "该名字已存在");
+            return "";
+        }
+        userService.updateUsername(oldName, newName);
+        return "";
+    }
 }
