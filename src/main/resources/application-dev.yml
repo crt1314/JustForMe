@@ -7,6 +7,7 @@ spring:
     url: jdbc:mysql://localhost:3306/forme?serverTimezone=Asia/Shanghai
     username: chrt
     password: chrt
+    type: com.alibaba.druid.pool.DruidDataSource
     druid:
       initial-size: 10
       max-active: 20
@@ -33,3 +34,6 @@ spring:
     mode: HTML5
     prefix: classpath:/templates/
     suffix: .html
+
+  messages:
+    basename: i18n.language
