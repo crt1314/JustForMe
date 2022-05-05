@@ -17,7 +17,7 @@ public class AnchorController {
     private AnchorService anchorService;
 
     // 返回列表
-    @RequestMapping("/main/{zone}")
+    @RequestMapping("/anchor/{zone}")
     public List<Anchor> anchor(@PathVariable("zone") String zone) {
         return anchorService.findByZone(zone);
     }

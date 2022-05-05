@@ -13,4 +13,8 @@ public interface UserService {
     Integer findIdByUsername(User user);
 
     User findById(Integer id);
+
+    void updatePassword(User user);
+
+    void updateUsername(String oldName, String newName);
 }

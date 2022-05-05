@@ -47,4 +47,14 @@ public class UserServiceImpl implements UserService {
         }
         return user;
     }
+
+    @Override
+    public void updatePassword(User user) {
+        userRepository.updatePassword(findIdByUsername(user), user.getPassword());
+    }
+
+    @Override
+    public void updateUsername(String oldName, String newName) {
+        userRepository.updateUsername(userRepository.findIdByUsername(oldName), newName);
+    }
 }

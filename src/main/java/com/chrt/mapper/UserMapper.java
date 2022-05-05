@@ -16,7 +16,4 @@ public interface UserMapper {
     // 根据用户名查找用户
     @Select("select * from tb_user where binary username=#{username}")
     User findByUsername(User user);
-
-    // 更改用户信息
-    void updateUser(User user);
 }
