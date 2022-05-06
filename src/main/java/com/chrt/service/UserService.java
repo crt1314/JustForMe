@@ -10,13 +10,5 @@ public interface UserService {
 
     void addUser(User user);
 
-    Integer findIdByUsername(User user);
-
     User findById(Integer id);
-
-    void updatePassword(String username, String newPassword);
-
-    void updateUsername(String oldName, String newName);
-
-    User findByUsername(String username);
 }

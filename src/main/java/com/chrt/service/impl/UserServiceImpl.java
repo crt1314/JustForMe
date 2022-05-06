@@ -34,11 +34,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Integer findIdByUsername(User user) {
-        return userMapper.findIdByUsername(user);
-    }
-
-    @Override
     public User findById(Integer id) {
         Optional<User> optional = userRepository.findById(id);
         User user = null;
@@ -46,20 +41,5 @@ public class UserServiceImpl implements UserService {
             user = optional.get();
         }
         return user;
-    }
-
-    @Override
-    public void updatePassword(String username, String newPassword) {
-        userRepository.updatePassword(userMapper.findIdByUsername(username), newPassword);
-    }
-
-    @Override
-    public void updateUsername(String oldName, String newName) {
-        userRepository.updateUsername(userMapper.findIdByUsername(oldName), newName);
-    }
-
-    @Override
-    public User findByUsername(String username) {
-        return userMapper.findByUsername(username);
     }
 }
