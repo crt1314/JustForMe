@@ -1,0 +1,119 @@
+* {
+    font-family: "Lucida Calligraphy", cursive, serif, sans-serif;
+    padding: 0;
+    margin: 0;
+    color: aqua;
+}
+
+@keyframes animated-border {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 255, 1);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(0, 255, 255, 0);
+    }
+}
+
+@keyframes animated-border2 {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 255, 1);
+    }
+    100% {
+        box-shadow: 0 0 0 10px rgba(0, 255, 255, 0);
+    }
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    background: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+header>div {
+    flex: 1;
+}
+
+header img {
+    border-radius: 100px;
+    animation: animated-border 2s infinite;
+}
+
+header h1 {
+    font-size: 90px;
+}
+
+header h1 span {
+    color: greenyellow;
+}
+
+nav[role="navigation"] {
+    position: absolute;
+    right: 50px;
+    top: 0;
+    overflow: hidden;
+    padding: 20px;
+}
+
+nav[role="navigation"] div {
+    float: left;
+    margin-left: 50px;
+    margin-top: 50px;
+    padding: 0 10px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+nav[role="navigation"] div:hover {
+    background-color: pink;
+    animation: animated-border2 2s infinite;
+}
+
+.d {
+    color: coral;
+}
+
+.d span {
+    color: gold;
+}
+
+.d2 {
+    position: absolute;
+    top: 80px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation-name: jump-ball;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+#redBall {
+    left: 20px;
+    background-color: red;
+    animation-timing-function: linear;
+}
+
+#greenBall {
+    left: 60px;
+    background-color: greenyellow;
+    animation-timing-function: ease-out;
+}
+
+#blueBall {
+    left: 100px;
+    background-color: aqua;
+    animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+}
+
+@keyframes jump-ball {
+    50% {
+        top: 30px;
+    }
+}
