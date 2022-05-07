@@ -5,12 +5,16 @@
     color: aqua;
 }
 
+body {
+    background: linear-gradient(to right, rgb(15, 12, 41), rgb(48, 43, 99), rgb(36, 36, 62));
+}
+
 @keyframes animated-border {
     0% {
         box-shadow: 0 0 0 0 rgba(0, 255, 255, 1);
     }
     100% {
-        box-shadow: 0 0 0 20px rgba(0, 255, 255, 0);
+        box-shadow: 0 0 0 20px rgba(0, 250, 250, 0);
     }
 }
 
@@ -29,7 +33,6 @@ header {
     height: 100vh;
     width: 100vw;
     text-align: center;
-    background: black;
 }
 
 a {
@@ -56,7 +59,7 @@ header h1 span {
 nav[role="navigation"] {
     position: absolute;
     right: 50px;
-    top: 0;
+    top: 50px;
     overflow: hidden;
     padding: 20px;
 }
@@ -64,7 +67,6 @@ nav[role="navigation"] {
 nav[role="navigation"] div {
     float: left;
     margin-left: 50px;
-    margin-top: 50px;
     padding: 0 10px;
     background-color: antiquewhite;
     border-radius: 10px;
@@ -109,7 +111,7 @@ nav[role="navigation"] div:hover {
 #blueBall {
     left: 100px;
     background-color: aqua;
-    animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+    animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.549);
 }
 
 @keyframes jump-ball {
