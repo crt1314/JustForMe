@@ -42,4 +42,9 @@ public class UserServiceImpl implements UserService {
         }
         return user;
     }
+
+    @Override
+    public User findByUn(String username) {
+        return userMapper.findByUn(username);
+    }
 }

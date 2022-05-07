@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -40,6 +41,16 @@ public class UserController {
         }
         userService.addUser(user);
         return "redirect:/index";
+    }
+
+    // 用户名验证
+    @PostMapping("/checkUsername")
+    @ResponseBody
+    public Boolean checkUsername(String username) {
+        if (!"".equals(username)) {
+            return userService.findByUn(username) == null;
+        }
+        return false;
     }
 
     // 前往登录页面
