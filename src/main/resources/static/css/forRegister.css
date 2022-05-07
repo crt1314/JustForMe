@@ -6,6 +6,29 @@ input {
     font-size: x-large;
     margin-top: 50px;
     margin-bottom: 10px;
+    background: transparent;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    border-bottom: cyan 1px solid;
+}
+
+.toIndent {
+    text-indent: 20px;
+    width: 300px;
+}
+
+.toIndent:focus {
+    background-color: rgba(0, 255, 255, .1);
+}
+
+input[type="submit"] {
+    width: 100px;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: rgba(0, 255, 255, .2);
 }
 
 #container {
@@ -27,9 +50,60 @@ form {
 
 fieldset {
     border-radius: 10px;
+    border-color: greenyellow;
 }
 
 legend {
     font-size: xx-large;
+}
+
+.heart {
+    left: 40%;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background-color: pink;
+    transform: rotate(-45deg);
+    animation: beat 1s infinite;
+}
+
+.heart:after {
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 25px;
+}
+
+.heart:before {
+    background-color: pink;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0;
+}
+
+@keyframes beat {
+    0% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(0.6) rotate(-45deg);
+    }
+}
+
+#home {
+    position: absolute;
+}
+
+#login {
+    position: absolute;
+    right: 0;
 }
 
