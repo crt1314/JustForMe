@@ -16,23 +16,19 @@
             <div class="heart"></div>
             <br/>
             <div>
-                <p>请勿在此项目中输入个人信息</p>
+                <p class="plist">请勿在此项目中输入个人信息</p>
             </div>
         </div>
-        <div>
-            <div class="heart"></div>
-            <br/>
-            <div>
-                <p>若个人信息泄露，概不负责</p>
-            </div>
-        </div>
-        <form th:action="@{/register}" method="post">
+        <form th:action="@{/register}" method="post" onsubmit="return check()">
             <fieldset>
                 <legend>Register</legend>
+                <label for="username">Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <input type="text" class="toIndent" id="username" name="username" placeholder="请输入您想要的用户名" required><br/>
                 <label id="forUsername"></label><br/>
+                <label for="password">Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <input type="password" id="password" class="toIndent" name="password" placeholder="请输入您想要的密码" required><br/>
                 <label id="forPassword"></label><br/>
+                <label for="checkPassword">Check Password:&nbsp;&nbsp;&nbsp;</label>
                 <input id="checkPassword" type="text" class="toIndent" placeholder="请重新输入密码" required><br/>
                 <label id="forCheckPassword"></label><br/>
                 <input type="text" name="dateJoin" id="getDate" style="display: none"/><br/>
@@ -43,14 +39,7 @@
             <div class="heart"></div>
             <br/>
             <div>
-                <p>祝coder一路顺风</p>
-            </div>
-        </div>
-        <div>
-            <div class="heart"></div>
-            <br/>
-            <div>
-                <p>愿世界没有BUG</p>
+                <p class="plist">愿世界没有BUG</p>
             </div>
         </div>
     </div>
