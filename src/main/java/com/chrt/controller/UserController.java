@@ -31,14 +31,7 @@ public class UserController {
 
     // 注册验证
     @PostMapping("/register")
-    public String register(User user, Model model) {
-        if (userService.findByUsername(user) != null) {
-            model.addAttribute("errMsg", "用户名已存在");
-            return "forward:/toRegister";
-        } else if (user.getPassword().length() < 8) {
-            model.addAttribute("errMsg", "密码不足8位");
-            return "forward:/toRegister";
-        }
+    public String register(User user) {
         userService.addUser(user);
         return "redirect:/index";
     }
