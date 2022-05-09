@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByUsername(User user) {
-        return userMapper.findByUsername(user);
+        return findByUn(user.getUsername());
     }
 
     @Override
@@ -45,6 +45,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByUn(String username) {
-        return userMapper.findByUn(username);
+        return userMapper.findByUsername(username);
     }
 }

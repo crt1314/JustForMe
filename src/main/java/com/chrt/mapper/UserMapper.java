@@ -15,9 +15,5 @@ public interface UserMapper {
 
     // 根据用户名查找用户
     @Select("select * from tb_user where binary username=#{username}")
-    User findByUsername(User user);
-
-    // 根据用户名查找用户
-    @Select("select * from tb_user where binary username=#{username}")
-    User findByUn(String username);
+    User findByUsername(String username);
 }

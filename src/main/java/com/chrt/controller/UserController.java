@@ -29,7 +29,7 @@ public class UserController {
         return "register";
     }
 
-    // 注册验证
+    // 注册
     @PostMapping("/register")
     public String register(User user) {
         userService.addUser(user);
