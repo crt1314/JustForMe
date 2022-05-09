@@ -40,10 +40,7 @@ public class UserController {
     @PostMapping("/checkUsername")
     @ResponseBody
     public Boolean checkUsername(String username) {
-        if (!"".equals(username)) {
-            return userService.findByUn(username) == null;
-        }
-        return false;
+        return userService.findByUn(username) == null;
     }
 
     // 前往登录页面
