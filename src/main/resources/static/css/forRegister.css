@@ -51,6 +51,7 @@ form {
 fieldset {
     border-radius: 10px;
     border-color: greenyellow;
+    animation: animated-border 2s infinite;
 }
 
 legend {
