@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author chrt
  *
- * @version 1.0.0
+ * @version 1.0.1
  *
  * */
 
