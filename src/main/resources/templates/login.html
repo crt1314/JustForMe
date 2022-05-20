@@ -3,12 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Just For Me</title>
+    <link rel="shortcut icon" href="img/Logo.png">
+    <link rel="stylesheet" href="css/theSame.css">
 </head>
 <body>
-    <form th:action="@{/login}" method="post">
-        <input type="text" name="username" placeholder="请输入用户名" required><br/>
-        <input type="password" name="password" placeholder="请输入密码" required><br/>
-        <input type="submit" value="提交">
-    </form>
+    <div id="container">
+        <form th:action="@{/login}" method="post">
+            <input type="text" name="username" placeholder="请输入用户名" required><br/>
+            <input type="password" name="password" placeholder="请输入密码" required><br/>
+            <input type="submit" value="提交">
+        </form>
+    </div>
+    <script type="text/javascript" src="js/js.js" color="0,255,255" opacity="1" count="119" zindex="-2"></script>
+    <script type="text/javascript" src="js/mouse_click.js"></script>
+    <script type="text/javascript" src="js/mouse_click2.js"></script>
+    <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+    <script>
+        L2Dwidget.init({
+            "model": {
+                jsonPath: "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+                "scale": 1
+            },
+            "display": {
+                "position": "left",
+                "width": 132,
+                "height": 196,
+                "hOffset": 0,
+                "vOffset": -20
+            },
+            "mobile": {
+                "show": true,
+                "scale": 0.5
+            },
+            "react": {
+                "opacityDefault": 0.8,
+                "opacityOnHover": 0.1
+            }
+        });
+    </script>
 </body>
 </html>
