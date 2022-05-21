@@ -9,8 +9,8 @@
     <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 </head>
 <body>
-    <div id="home"><a th:href="@{/index}">&lt;&lt; Go back to index</a></div>
-    <div id="login"><a th:href="@{/toLogin}">Go forward to login &gt;&gt;</a></div>
+    <div id="home"><a th:href="@{/index}" accesskey="h">&lt;&lt; Go back to index</a></div>
+    <div id="login"><a th:href="@{/toLogin}" accesskey="l">Go forward to login &gt;&gt;</a></div>
     <div id="container">
         <div>
             <div class="heart"></div>
@@ -23,16 +23,16 @@
             <fieldset>
                 <legend>Register</legend>
                 <label for="username">Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <input type="text" class="toIndent" id="username" name="username" placeholder="请输入您想要的用户名" required><br/>
+                <input type="text" class="toIndent" id="username" name="username" placeholder="请输入您想要的用户名" required tabindex="1"><br/>
                 <label id="forUsername"></label><br/>
                 <label for="password">Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <input type="password" id="password" class="toIndent" name="password" placeholder="请输入您想要的密码" required><br/>
+                <input type="password" id="password" class="toIndent" name="password" placeholder="请输入您想要的密码" required tabindex="2"><br/>
                 <label id="forPassword"></label><br/>
                 <label for="checkPassword">Check Password:&nbsp;&nbsp;&nbsp;</label>
-                <input id="checkPassword" type="text" class="toIndent" placeholder="请重新输入密码" required><br/>
+                <input id="checkPassword" type="text" class="toIndent" placeholder="请重新输入密码" required tabindex="3"><br/>
                 <label id="forCheckPassword"></label><br/>
                 <input type="text" name="dateJoin" id="getDate" style="display: none"/><br/>
-                <input type="submit" value="提交">
+                <input type="submit" value="提交" tabindex="4">
             </fieldset>
         </form>
         <div>
