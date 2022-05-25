@@ -1,0 +1,9 @@
+#sc {
+    position: fixed;
+    width: 1920px;
+    left: 0;
+    height: 985px;
+    z-index: -9999;
+    border: 0;
+    object-fit: fill;
+}
