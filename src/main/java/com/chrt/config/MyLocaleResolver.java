@@ -8,11 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Locale;
 
-// 自定义区域解析器
+/**
+ * 自定义区域解析器
+ * @author chrt
+ * @version 1.0.0
+ */
 @Configuration
 public class MyLocaleResolver implements LocaleResolver {
+    /**
+     * 返回国际化对象
+     * 默认为zh_CN
+     * @param httpServletRequest 请求
+     * @return Locale
+     */
     @Override
-    // 返回国际化对象
     public Locale resolveLocale(HttpServletRequest httpServletRequest) {
         String accept_language = httpServletRequest.getHeader("Accept-Language");
         String language = httpServletRequest.getParameter("language");
@@ -25,6 +34,10 @@ public class MyLocaleResolver implements LocaleResolver {
 
     }
 
+    /**
+     * 将国际化对象添加到Bean中
+     * @return 自定义的国际化对象
+     */
     @Bean
     public LocaleResolver getLocaleResolver() {
         return new MyLocaleResolver();

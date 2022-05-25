@@ -7,6 +7,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * 定义字符串转Date的转换器
+ * @author chrt
+ * @version 1.0.0
+ */
 public class StringToDateConverter implements Converter<String, Date> {
 
     private static final String dateFormat = "yyyy-MM-dd HH:mm:ss";

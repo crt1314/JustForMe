@@ -9,6 +9,11 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 
 import javax.annotation.PostConstruct;
 
+/**
+ * 用于添加字符串转变为Date的转换器
+ * @author chrt
+ * @version 1.0.0
+ */
 @Configuration
 public class WebConfigBeans {
     @Autowired

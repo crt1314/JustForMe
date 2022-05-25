@@ -11,45 +11,76 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+/**
+ * 用于控制user在页面中的操作流程
+ * @author chrt
+ * @version 1.0.0
+ */
 @Controller
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    // 回到首页
+    /**
+     * 回到首页
+     * @return "resources/templates/index.html"
+     */
     @RequestMapping("/index")
     public String goToIndex() {
         return "index";
     }
 
-    // 前往注册页面
+    /**
+     * 前往注册页面
+     * @return "resources/templates/register.html"
+     */
     @RequestMapping("/toRegister")
     public String toRegister() {
         return "register";
     }
 
-    // 注册
+    /**
+     * 用户提交表单后的信息加载在user中，并将user添加进数据库中
+     * 添加成功后返回首页
+     * @param user 用户信息
+     * @return "resources/templates/index.html"
+     */
     @PostMapping("/register")
     public String register(User user) {
         userService.addUser(user);
         return "redirect:/index";
     }
 
-    // 用户名验证
+    /**
+     * 检查用户名是否存在
+     * 用户名存在则返回false，不存在返回true
+     * @param username 用户名
+     * @return 数据库中是否不存在此用户名
+     */
     @PostMapping("/checkUsername")
     @ResponseBody
     public Boolean checkUsername(String username) {
         return userService.findByUn(username) == null;
     }
 
-    // 前往登录页面
+    /**
+     * 前往登录页面
+     * @return "resources/templates/login.html"
+     */
     @RequestMapping("/toLogin")
     public String toLogin() {
         return "login";
     }
 
-    // 登录验证
+    /**
+     * 进行用户登录验证，通过则前往主页面
+     * 否则回到登录页面
+     * @param user 用户信息
+     * @param model 用于存放错误信息
+     * @param redirectAttributes 用于存放用户信息
+     * @return 主页或登录页
+     */
     @PostMapping("/login")
     public String login(User user, Model model, RedirectAttributes redirectAttributes) {
         if (userService.findByUnAndPwd(user) != null) {
@@ -61,7 +92,13 @@ public class UserController {
         return "forward:/toLogin";
     }
 
-    // 前往主页
+    /**
+     * 前往主页
+     * 如果没有携带用户信息，则退回首页
+     * @param modelMap 存放着用户信息
+     * @param model 用于存放用户信息
+     * @return 主页或首页
+     */
     @RequestMapping("/main")
     public String toMain(ModelMap modelMap, Model model) {
         String username = (String) modelMap.get("username");

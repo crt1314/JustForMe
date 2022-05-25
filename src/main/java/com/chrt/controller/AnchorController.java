@@ -9,14 +9,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-// 默认类中的方法都以json格式返回
+/**
+ * Anchor相关控制流程
+ * @author chrt
+ * @version 1.0.0
+ */
 @RestController
 public class AnchorController {
 
     @Autowired
     private AnchorService anchorService;
 
-    // 返回列表
+    /**
+     * 返回一个列表
+     * @param zone ajax传递过来的查询条件
+     * @return Anchor列表
+     */
     @RequestMapping("/anchor/{zone}")
     public List<Anchor> anchor(@PathVariable("zone") String zone) {
         return anchorService.findByZone(zone);
